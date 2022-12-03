@@ -1,0 +1,2 @@
+#The server was automatic started by Flatnode!
+eula=true

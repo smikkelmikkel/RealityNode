@@ -1,0 +1,5 @@
+messages:
+  kick:
+    authentication-servers-down: ''
+    flying-player: '&8[&bFlatnode&8] Flying is not enabled! If you use cheats set is off!'
+    flying-vehicle: '&8[&bFlatnode&8] Flying is not enabled! If you use cheats set is off!'
