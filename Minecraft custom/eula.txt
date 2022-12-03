@@ -1,2 +1,4 @@
-#The server was automatic started by Flatnode!
+#U server is zojuist gestart omdat eula al automatische is geaccepteerd door RealityNode!
+#Wij wensen u een fijne speel evaring om onze server!
+#Indien u problemen heeft kunt u die gerust in onze discord server of website laten behandelen!
 eula=true
