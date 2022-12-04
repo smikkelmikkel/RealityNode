@@ -6,6 +6,11 @@ echo "Typ je domein (node.domein.nl): "
 
 read node
 
+## Melding
+
+echo "Zorg ervoor dat je wel een A record hebt gemaakt met je subdomein die je wilt!"
+echo "Installatie zal over 5 seconden weer verder gaan!"
+sleep 5s
 # Variables
 
 FQDN=`hostname --ip-address`
