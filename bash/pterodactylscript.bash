@@ -58,6 +58,7 @@ CREATE USER '${MYSQL_USER_PANEL}'@'127.0.0.1' IDENTIFIED BY '${MYSQL_PASSWORD_PA
 GRANT ALL PRIVILEGES ON *.* TO '${MYSQL_USER_PANEL}'@'127.0.0.1' WITH GRANT OPTION;
 FLUSH PRIVILEGES;"
 MYSQL_SCRIPT
+
 sed -i -e "s/127.0.0.1/0.0.0.0/g" /etc/mysql/my.cnf
 sed -i -e "s/127.0.0.1/0.0.0.0/g" /etc/mysql/mariadb.conf.d/50-server.cnf
 systemctl restart mysql
@@ -109,7 +110,7 @@ systemctl restart nginx
 
 # Maakt locatie aan
 
-php artisan p:location:make --short=Dronten.Netherlands --long="Gemaakt door: Maikel"
+php artisan p:location:make --short=Dronten.Netherlands --long="Locatie is gemaakt door RealityNode https://realitynode.nl"
 
 # Node setup
 
@@ -191,11 +192,11 @@ echo "Installatie volbracht! Je inloggegevens staan in login.txt"
 
 # Login details
 cd /
-cat > login.txt <<maikel
+cat > login.txt <<Realitynode
 Pterodactyl URL: ${URL}
 Pterodactyl Gebruikersnaam: ${USER_USERNAME}
 Pterodactyl Wachtwoord: ${USER_PASSWORD}
 MySQL Gebruiker: ${MYSQL_USER}
 MySQL Database: ${MYSQL_DATABASE}
 MySQL Wachtwoord: ${MYSQL_PASSWORD}
-maikel
+Realitynode
