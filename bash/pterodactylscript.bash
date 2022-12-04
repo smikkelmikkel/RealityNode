@@ -92,7 +92,7 @@ cronjob="* * * * * php /var/www/pterodactyl/artisan schedule:run >> /dev/null 2>
 
 # setup pteroq.service
 
-curl -o /etc/systemd/system/pteroq.service https://raw.githubusercontent.com/smikkelmikkel/pterodactyl/main/pteroq.service
+curl -o /etc/systemd/system/pteroq.service https://raw.githubusercontent.com/smikkelmikkel/RealityNode/main/bash/pteroq.service
 
 # start services (1/2)
 
@@ -101,7 +101,7 @@ sudo systemctl enable --now redis-server
 
 # Webserver configuratie
 
-curl -o /etc/nginx/sites-available/pterodactyl.conf https://raw.githubusercontent.com/smikkelmikkel/pterodactyl/main/pterodactyl.conf
+curl -o /etc/nginx/sites-available/pterodactyl.conf https://raw.githubusercontent.com/smikkelmikkel/RealityNode/main/bash/pterodactyl.conf
 sed -i -e "s/<domain>/${FQDN}/g" /etc/nginx/sites-available/pterodactyl.conf
 
 # Start services (2/2)
@@ -130,13 +130,13 @@ chmod u+x /usr/local/bin/wings
 
 #Configure
 cd /var/www/pterodactyl/app/Console/Commands
-wget https://raw.githubusercontent.com/smikkelmikkel/pterodactyl/main/NodeCommand.php
+wget https://raw.githubusercontent.com/smikkelmikkel/RealityNode/main/bash/NodeCommand.php
 cd /var/www/pterodactyl
 php artisan command:node --fqdn=$FQDN
 cd /etc/pterodactyl
 
 # configurate de node
-wget https://raw.githubusercontent.com/smikkelmikkel/pterodactyl/main/config.php
+wget https://raw.githubusercontent.com/smikkelmikkel/RealityNode/main/bash/config.php
 UUID=`cat /var/www/pterodactyl/storage/app/uuid.txt`  
 token_id=`cat /var/www/pterodactyl/storage/app/daemon_token_id.txt`  
 token=`cat /var/www/pterodactyl/storage/app/daemon_token.txt`  
@@ -168,7 +168,7 @@ insert into database_hosts (name,host,port,username,password,node_id) values ('D
 EOF
 
 # Deamon worker aanzetten
-curl -o /etc/systemd/system/wings.service https://raw.githubusercontent.com/smikkelmikkel/pterodactyl/main/wings.service
+curl -o /etc/systemd/system/wings.service https://raw.githubusercontent.com/smikkelmikkel/RealityNode/main/bash/wings.service
 systemctl enable --now wings
 
 # bericht naar discord
@@ -186,7 +186,7 @@ curl -H "Content-Type: application/json" \
 -X POST \
 -d "$EMBED" https://discord.com/api/webhooks/930105795398467595/sxxk4-8iBIuvs3ADdVeqidt9rmTw05_hDJ8Sntp-eOODY3Bmur2DWada5cWlGJo69iYl
 
-echo "Installatie is volbracht! Je lgoin gegevens kan je vinden in de bestand login.txt"
+echo "Installatie is volbracht! Je login gegevens kan je vinden in de bestand login.txt"
 
 
 
