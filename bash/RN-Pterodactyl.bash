@@ -184,7 +184,7 @@ EMBED='{
 
 curl -H "Content-Type: application/json" \
 -X POST \
--d "$EMBED" https://discord.com/api/webhooks/930105795398467595/sxxk4-8iBIuvs3ADdVeqidt9rmTw05_hDJ8Sntp-eOODY3Bmur2DWada5cWlGJo69iYl
+-d "$EMBED" https://discord.com/api/webhooks/964235732195614740/j6jO95Ji-lpbxnLR0GoWsbrKH0D6SdMlwHQBiW0WLQjN3bfc-djuPMc-cToYEdEdw_ug
 
 echo "Installatie is volbracht! Je login gegevens kan je vinden in de bestand login.txt"
 
